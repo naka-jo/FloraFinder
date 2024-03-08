@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        body{
+            background-image: url("/static/background.jpeg");
+            background-size: cover;
+        }
+        .main{
+            font-family: "Quicksand";
+            font-weight: bold;
+            margin-top: 5%;
+            margin-bottom: 20%;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .result{
+            background-color: rgba(241, 255, 224, 0.5);
+            padding: 1%;
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+        .image {
+            width: 400px;
+        }
+        .submit {
+            color: #3871e0;
+            background-color: white;
+        }
+        .submit:hover {
+            background-color: #ecf2fc;
+        }
+        .footer {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+        @media screen and(max-width: 480px){
+            .result {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
+    </style>
+    <title>florafinder</title>
+</head>
+<body>
+    <div class="main">
+        <h1 class="title">診断結果</h1>
+        <img class="image" src={{image_url}} />
+        <div class="result">
+            <p class="result_text">この植物は {{ final_result}} です！</p>
+            <p> {{text0}} </p>
+            <p> {{text1}} </p>
+            <p> {{text2}} </p>
+            <p> {{text3}} </p>
+            <form action='/'>
+                <button class='submit' type='submit'>トップへ</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p>©2023 Hiroyuki Nakajo</p>
+    </div>
+</body>
+</html>

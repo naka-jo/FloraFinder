@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+        body{
+            background-image: url("/static/background.jpeg");
+            background-size: cover;
+        }
+        .main{
+            background-color: rgba(241, 255, 224, 0.5);
+            margin-right: 30%;
+            margin-left: 30%;
+            padding: 1%;
+            font-family: "Quicksand";
+            margin-top: 5%;
+            margin-bottom: 20%;
+            vertical-align: middle;
+            text-align: center;
+            font-weight: bold;
+        }
+        .submit {
+            color: #3871e0;
+            background-color: white;
+        }
+        .submit:hover {
+            background-color: #ecf2fc;
+        }
+        .footer {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+        @media screen and(max-width: 480px){
+            .main {
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
+    </style>
+    <title>florafinder</title>
+</head>
+<body>
+    <div class="main">
+        <h2>これは被子植物です</h2>
+        <p>被子植物とは？</p>
+        <p>・・・種子が果実に包まれている</p>
+        <p>・・・多くの場合、花を咲かせる</p>
+        <h1 class="title">Next Step！</h1>
+        <p class="jpeg">次に、葉の画像をアップロードしてください</p>
+        <form enctype="multipart/form-data" action="/predict21" method="post">
+            <input class="file" type="file" value="ファイルを選択" name="file" accept="image/*">
+            <input class="submit" type="submit" value="推論">
+        </form>
+        <p>アドバイス</p>
+        <ul>
+            <p>葉に近づいて撮影しよう！</p>
+        </ul>
+    </div>
+    <div class="footer">
+        <p>©2023 Hiroyuki Nakajo</p>
+    </div>
+</body>
+</html>
